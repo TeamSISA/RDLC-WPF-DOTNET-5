@@ -1,0 +1,38 @@
+﻿<Window x:Class="Presentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        
+        xmlns:local="clr-namespace:Presentation"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <WindowsFormsHost Grid.Column="1" Grid.ColumnSpan="2" x:Name="winformHost">
+            
+        </WindowsFormsHost>
+
+        <Grid Grid.Column="0">
+            <StackPanel>
+                <Button Height="30" Margin="5 10" Content="Today" x:Name="btnToday" Click="btnToday_Click"/>
+                <Button Height="30" Margin="5 10" Content="Last 7 Days" x:Name="btnLast7Days" Click="btnLast7Days_Click"/>
+                <Button Height="30" Margin="5 10" Content="This Month Days" x:Name="btnThisMonth" Click="btnThisMonth_Click"/>
+                <Button Height="30" Margin="5 10" Content="Last 30 Days" x:Name="btnLast30Days" Click="btnLast30Days_Click"/>
+                <Button Height="30" Margin="5 10" Content="Last Year" x:Name="btnThisYear" Click="btnThisYear_Click"/>
+                <TextBlock Margin="5 0" Text="From:"/>
+                <DatePicker Margin="5" x:Name="datePickerFrom" SelectedDate="11/1/2019"/>
+                <TextBlock Margin="5 0" Text="To:"/>
+                <DatePicker Margin="5" x:Name="datePickerTo" SelectedDate="12/24/2020"/>
+                <Button Height="30" Margin="5 10" Content="Apply Custom Date" x:Name="btnApplyCustomDate" Click="btnApplyCustomDate_Click"/>
+                <TextBlock x:Name="txt" Height="20"/>
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
