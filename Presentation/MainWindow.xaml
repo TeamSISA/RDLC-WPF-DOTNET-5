@@ -6,7 +6,7 @@
         
         xmlns:local="clr-namespace:Presentation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="460" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -31,6 +31,7 @@
                 <DatePicker Margin="5" x:Name="datePickerTo" SelectedDate="12/24/2020"/>
                 <Button Height="30" Margin="5 10" Content="Apply Custom Date" x:Name="btnApplyCustomDate" Click="btnApplyCustomDate_Click"/>
                 <TextBlock x:Name="txt" Height="20"/>
+                <TextBlock x:Name="txt2" Height="20"/>
             </StackPanel>
         </Grid>
 

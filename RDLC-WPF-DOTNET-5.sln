@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{8A91B7FE-9983-45D4-93BD-6953520C41E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{8A91B7FE-9983-45D4-93BD-6953520C41E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{AF8CAE77-BD89-482F-B766-3F47DEA5DA9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Dominio\Dominio.csproj", "{AF8CAE77-BD89-482F-B766-3F47DEA5DA9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{D601F37A-690F-4844-A8AC-2F429DB46B45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{D601F37A-690F-4844-A8AC-2F429DB46B45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RDLC.EFCore", "RDLC.EFCore\RDLC.EFCore.csproj", "{A84C66BB-A01B-4B8C-985B-02AF437185CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pruebaEFCore", "pruebaEFCore\pruebaEFCore.csproj", "{5EFF625D-821B-4B6F-9BDD-3C946A77FC47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{D601F37A-690F-4844-A8AC-2F429DB46B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D601F37A-690F-4844-A8AC-2F429DB46B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D601F37A-690F-4844-A8AC-2F429DB46B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A84C66BB-A01B-4B8C-985B-02AF437185CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A84C66BB-A01B-4B8C-985B-02AF437185CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A84C66BB-A01B-4B8C-985B-02AF437185CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A84C66BB-A01B-4B8C-985B-02AF437185CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EFF625D-821B-4B6F-9BDD-3C946A77FC47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFF625D-821B-4B6F-9BDD-3C946A77FC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFF625D-821B-4B6F-9BDD-3C946A77FC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFF625D-821B-4B6F-9BDD-3C946A77FC47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
