@@ -27,7 +27,8 @@ namespace RDLC.EFCore.Models.DB
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=BikeStore;Trusted_Connection=True");
+                //optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=BikeStore;Trusted_Connection=True");
+                optionsBuilder.UseNpgsql("Server=127.0.0.1;Port=5432;Database=BikeStore;User Id=postgres;Password=Ventana2021;");
             }
         }
 

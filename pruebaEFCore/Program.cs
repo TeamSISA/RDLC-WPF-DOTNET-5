@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Threading;
 using DataAccess;
+using RDLC.EFCore.Models.DB;
 using RDLC.EFCore.spDB;
 
 namespace pruebaEFCore
@@ -10,6 +11,9 @@ namespace pruebaEFCore
     {
         static void Main(string[] args)
         {
+
+            BikeStoreContext _dbContext = new BikeStoreContext();
+
             Stopwatch _stopWatch = new Stopwatch();
 
             storedProceduresAccess sp = new storedProceduresAccess();
@@ -22,6 +26,13 @@ namespace pruebaEFCore
             Console.ReadKey();
             Console.WriteLine();
 
+            //_stopWatch.Start();
+            //var postgres = sp.getCustomerFromSqlRawPostgres();
+            //_stopWatch.Stop();
+            //Console.WriteLine($"Execute sp from EFCore: {_stopWatch.ElapsedMilliseconds}");
+
+            //Thread.Sleep(1000);
+
             _stopWatch.Start();
             var f = sp.getCustomersList();
             _stopWatch.Stop();
@@ -29,6 +40,8 @@ namespace pruebaEFCore
             _stopWatch.Reset();
 
             Thread.Sleep(1000);
+
+            //f.ForEach(x => Console.WriteLine($"{x.CustomerId}: {x.FirstName}"));
 
             _stopWatch.Start();
             sp.getCustomersList();
@@ -42,6 +55,38 @@ namespace pruebaEFCore
             sp.getCustomersListNoTracking();
             _stopWatch.Stop();
             Console.WriteLine($"List as no tracking: {_stopWatch.ElapsedMilliseconds}");
+            _stopWatch.Reset();
+
+            Thread.Sleep(1000);
+
+            _stopWatch.Start();
+            storedProceduresAccess.getCustomersCompiled(_dbContext);
+            _stopWatch.Stop();
+            Console.WriteLine($"Cold Compiled Query IEnumnerable: {_stopWatch.ElapsedMilliseconds}");
+            _stopWatch.Reset();
+
+            Thread.Sleep(1000);
+
+            _stopWatch.Start();
+            storedProceduresAccess.getCustomersCompiled(_dbContext);
+            _stopWatch.Stop();
+            Console.WriteLine($"Warm Compiled Query IEnumnerable: {_stopWatch.ElapsedMilliseconds}");
+            _stopWatch.Reset();
+
+            Thread.Sleep(1000);
+
+            _stopWatch.Start();
+            storedProceduresAccess.getCustomer1(_dbContext);
+            _stopWatch.Stop();
+            Console.WriteLine($"Cold Compiled Query 1 customer IEnumnerable: {_stopWatch.ElapsedMilliseconds}");
+            _stopWatch.Reset();
+
+            Thread.Sleep(1000);
+
+            _stopWatch.Start();
+            storedProceduresAccess.getCustomer1(_dbContext);
+            _stopWatch.Stop();
+            Console.WriteLine($"Warm Compiled Query 1 customer IEnumnerable: {_stopWatch.ElapsedMilliseconds}");
             _stopWatch.Reset();
 
             Thread.Sleep(1000);
@@ -95,7 +140,7 @@ namespace pruebaEFCore
             Thread.Sleep(1000);
 
             _stopWatch.Start();
-            sp.getCustomerFromSqlRaw();
+            sp.getCustomerFromSqlRawPostgres();
             _stopWatch.Stop();
             Console.WriteLine($"Execute sp from EFCore: {_stopWatch.ElapsedMilliseconds}");
 
